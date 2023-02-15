@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "docs": "lerna run storybook --scope=docs"
+  },
+  "devDependencies": {
+    "lerna": "^6.5.1"
+  }
+}

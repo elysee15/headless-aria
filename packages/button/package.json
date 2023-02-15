@@ -1,0 +1,35 @@
+{
+  "name": "@headless-aria/button",
+  "version": "0.0.0",
+  "description": "Headless react component based on React-aria",
+  "author": "elysee15 <elyseebleu1@gmail.com>",
+  "homepage": "https://github.com/elysee15/headless-aria#readme",
+  "license": "ISC",
+  "main": "./src/index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elysee15/headless-aria.git"
+  },
+  "scripts": {
+    "build": "concurrently \"tsup src/button.tsx\" \"tsup src/types/index.ts --dts\"",
+    "test": "node ./__tests__/button.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/elysee15/headless-aria/issues"
+  },
+  "dependencies": {
+    "react-aria": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "concurrently": "^7.6.0",
+    "tsup": "^6.6.3"
+  }
+}

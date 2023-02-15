@@ -1,0 +1,18 @@
+{
+    "json.schemas": [
+      {
+        "url": "https://unpkg.com/tsup/schema.json",
+        "fileMatch": [
+          "package.json",
+          "tsup.config.json"
+        ]
+      },
+      {
+        "url": "https://json.schemastore.org/tsconfig",
+        "fileMatch": [
+          "tsconfig.json",
+          "tsconfig/index.json"
+        ]
+      },
+    ]
+  }
