@@ -1,1 +1,0 @@
-{"version":3,"sources":["../src/types/index.ts"],"sourcesContent":["import { AriaButtonProps } from \"react-aria\";\n\nexport type ButtonProps = AriaButtonProps<\"button\">;\n"],"mappings":"kWAAA,IAAAA,EAAA,kBAAAC,EAAAD","names":["types_exports","__toCommonJS"]}

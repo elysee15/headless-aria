@@ -1,9 +1,3 @@
-import { defineConfig } from "tsup";
+import { getTsupConfig } from '@headless-aria/utils'
 
-export default defineConfig({
-  entry: ["src/index.ts"],
-  splitting: false,
-  sourcemap: true,
-  clean: true,
-  minify: true,
-});
+export default getTsupConfig(["src/index.ts"]);
