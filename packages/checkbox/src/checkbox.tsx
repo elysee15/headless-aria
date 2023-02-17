@@ -2,7 +2,7 @@ import {} from "@headless-aria/button";
 
 import React from "react";
 import { useToggleState } from "react-stately";
-import { useCheckbox, AriaCheckboxProps } from "react-aria";
+import { useCheckbox, AriaCheckboxProps, mergeProps } from "react-aria";
 
 type BaseProps = {
   required?: boolean;
@@ -24,10 +24,14 @@ export interface CheckboxProps
   checked?: boolean;
   defaultChecked?: boolean;
   indeterminate?: boolean;
+  inputProps?: React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  >;
 }
 
 function Checkbox(props: CheckboxProps) {
-  const { children } = props;
+  const { children, inputProps = {} } = props;
 
   const state = useToggleState({
     ...props,
@@ -37,7 +41,7 @@ function Checkbox(props: CheckboxProps) {
     isSelected: props.checked,
   });
   const ref = React.useRef(null);
-  const { inputProps } = useCheckbox(
+  const { inputProps: ariaInputProps } = useCheckbox(
     {
       ...props,
       isDisabled: props.disabled,
@@ -52,8 +56,12 @@ function Checkbox(props: CheckboxProps) {
   );
 
   return (
-    <label style={{ display: "block" }}>
-      <input {...inputProps} ref={ref} />
+    <label style={{ display: "block" }} data-testid="label">
+      <input
+        {...mergeProps(inputProps, ariaInputProps)}
+        ref={ref}
+        data-testid="input"
+      />
       {children}
     </label>
   );
