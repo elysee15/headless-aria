@@ -1,3 +1,4 @@
+// import { getTsupConfig } from "@headless-aria/utils";
 import { defineConfig } from "tsup";
 
 export default defineConfig({
@@ -5,5 +6,6 @@ export default defineConfig({
   splitting: false,
   sourcemap: true,
   clean: true,
-  minify: true,
+  minify: false,
+  dts: true,
 });

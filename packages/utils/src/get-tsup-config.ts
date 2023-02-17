@@ -7,12 +7,12 @@ export function getTsupConfig(
   options?: GetTsupConfig
 ) {
   return defineConfig({
+    ...options,
     entry: entry,
     splitting: false,
     sourcemap: true,
     clean: true,
     minify: false,
     dts: true,
-    ...options,
   });
 }
