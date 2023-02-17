@@ -6,13 +6,16 @@ export default {
   component: Checkbox,
 } as Meta<CheckboxProps>;
 
-const Template: Story<CheckboxProps> = (args) => <Checkbox {...args} />;
+const Template: Story<CheckboxProps> = (args) => (
+  <Checkbox {...args}>Label</Checkbox>
+);
 
 export const Default = Template.bind({});
 Default.args = {
-  isDisabled: false,
-  isIndeterminate: false,
-  isReadOnly: false,
-  isRequired: false,
-  isSelected: false,
+  disabled: false,
+  indeterminate: false,
+  readOnly: false,
+  required: false,
+  checked: true,
+  defaultChecked: false,
 };
