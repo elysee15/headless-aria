@@ -18,7 +18,7 @@
     "url": "git+https://github.com/elysee15/headless-aria.git"
   },
   "scripts": {
-    "build": "concurrently \"tsup src/button.tsx\" \"tsup src/button.tsx --dts\"",
+    "build": "tsup",
     "test": "node ./__tests__/button.test.js"
   },
   "bugs": {
@@ -29,8 +29,12 @@
     "react-stately": "^3.20.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.28",
     "concurrently": "^7.6.0",
+    "jest": "^29.4.3",
+    "jest-environment-jsdom": "^29.4.3",
     "tsup": "^6.6.3"
   }
 }
