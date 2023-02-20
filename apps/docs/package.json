@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test-storybook": "test-storybook"
   },
   "dependencies": {
     "@headless-aria/button": "*",
@@ -16,16 +17,20 @@
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
     "react-dom": "^18.2.0",
-    "react-stately": "^3.20.0"
+    "react-stately": "^3.20.0",
+    "storybook-addon-react-docgen": "^1.2.43"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-vite": "^0.4.2",
+    "@storybook/jest": "^0.0.10",
     "@storybook/react": "^6.5.16",
+    "@storybook/test-runner": "^0.9.4",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

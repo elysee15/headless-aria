@@ -8,6 +8,7 @@
   "scripts": {
     "docs": "lerna run storybook --scope=docs",
     "test": "vitest",
+    "test:storybook": "npx lerna run test-storybook --scope=docs",
     "build": "lerna run build --scope=@headless-aria/*",
     "coverage": "vitest run --coverage",
     "prepare": "husky install"
