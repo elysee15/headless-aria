@@ -1,5 +1,6 @@
-import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import Button from "@headless-aria/button";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -20,6 +21,17 @@ const Template: ComponentStory<typeof Button> = (args) => (
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-  isDisabled: true,
   className: "button__primary",
+  tabIndex: 1,
+  disabled: false,
+};
+
+Default.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  const buttonEl = canvas.getByRole("button");
+
+  await userEvent.click(buttonEl);
+  await expect(buttonEl.textContent).toBe("Button");
+  await expect(buttonEl).toHaveClass("button__primary");
 };
