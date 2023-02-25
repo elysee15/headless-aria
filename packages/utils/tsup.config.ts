@@ -1,4 +1,3 @@
-// import { getTsupConfig } from "@headless-aria/utils";
 import { defineConfig } from "tsup";
 
 export default defineConfig({

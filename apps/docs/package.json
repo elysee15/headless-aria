@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./src/index.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -12,13 +13,13 @@
     "test-storybook": "test-storybook"
   },
   "dependencies": {
-    "@headless-aria/button": "*",
-    "@headless-aria/checkbox": "*",
+    "@headless-aria/core": "*",
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
     "react-dom": "^18.2.0",
     "react-stately": "^3.20.0",
-    "storybook-addon-react-docgen": "^1.2.43"
+    "storybook-addon-react-docgen": "^1.2.43",
+    "tsup": "^6.6.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

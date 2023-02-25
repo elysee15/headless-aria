@@ -1,5 +1,5 @@
 import React from "react";
-import Checkbox from "../src/checkbox";
+import Checkbox from "../checkbox/checkbox";
 import { render, screen } from "@testing-library/react";
 
 describe("Checkbox", () => {
