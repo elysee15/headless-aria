@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/react";
-import Checkbox, { CheckboxProps } from "@headless-aria/checkbox";
+import Checkbox, { CheckboxProps } from "@headless-aria/core/checkbox";
 
 export default {
   title: "components/checkbox",

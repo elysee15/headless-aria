@@ -1,5 +1,3 @@
-import {} from "@headless-aria/button";
-
 import React from "react";
 import { useToggleState } from "react-stately";
 import { useCheckbox, AriaCheckboxProps, mergeProps } from "react-aria";

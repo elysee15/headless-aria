@@ -1,11 +1,11 @@
-# `checkbox`
+# `core`
 
 > TODO: description
 
 ## Usage
 
 ```
-const checkbox = require('checkbox');
+const core = require('core');
 
 // TODO: DEMONSTRATE API
 ```
