@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { AriaButtonProps, mergeProps, useButton } from "react-aria";
 
 type BaseProps = Omit<
@@ -14,15 +14,18 @@ type OmitedProps = "isDisabled";
 export type ButtonProps = BaseProps &
   Omit<AriaButtonProps<"button">, OmitedProps>;
 
-function Button(props: ButtonProps) {
-  const ref = React.useRef(null);
-  const { buttonProps } = useButton(props, ref);
+const Button = forwardRef(
+  (props: ButtonProps, ref: React.RefObject<HTMLButtonElement>) => {
+    const fallbackRef = React.useRef(null);
+    const domRef = ref || fallbackRef;
+    const { buttonProps } = useButton(props, domRef);
 
-  return (
-    <button {...mergeProps(buttonProps, props)} ref={ref}>
-      {props.children}
-    </button>
-  );
-}
+    return (
+      <button {...mergeProps(buttonProps, props)} ref={domRef}>
+        {props.children}
+      </button>
+    );
+  }
+);
 
 export default Button;
