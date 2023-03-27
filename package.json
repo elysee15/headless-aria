@@ -3,13 +3,13 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/docs"
   ],
   "scripts": {
     "docs": "lerna run storybook --scope=docs",
     "test": "vitest",
     "test:storybook": "npx lerna run test-storybook --scope=docs",
-    "build": "lerna run build --scope=@headless-aria/*",
+    "build": "lerna run build --scope=design-system",
     "coverage": "vitest run --coverage",
     "prepare": "husky install"
   },

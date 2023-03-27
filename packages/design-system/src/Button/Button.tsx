@@ -1,21 +1,10 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { AriaButtonProps, mergeProps, useButton } from "react-aria";
 
-type BaseProps = Omit<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >,
-  "onClick" | "onChange"
->;
-
-type OmitedProps = "isDisabled";
-
-export type ButtonProps = BaseProps &
-  Omit<AriaButtonProps<"button">, OmitedProps>;
+export type ButtonProps = AriaButtonProps;
 
 // TODO: add a correct type for `ref`
-const Button = forwardRef((props: ButtonProps, ref: any) => {
+export const Button = React.forwardRef((props: ButtonProps, ref: any) => {
   const fallbackRef = React.useRef(null);
   const domRef = ref || fallbackRef;
   const { buttonProps } = useButton(props, domRef);
@@ -26,5 +15,3 @@ const Button = forwardRef((props: ButtonProps, ref: any) => {
     </button>
   );
 });
-
-export default Button;

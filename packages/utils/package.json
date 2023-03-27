@@ -33,6 +33,8 @@
     "tsup": "^6.6.3"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@tsconfig/node16": "^1.0.3",
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
     "react-stately": "^3.20.0",

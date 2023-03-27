@@ -13,12 +13,13 @@
     "test-storybook": "test-storybook"
   },
   "dependencies": {
+    "design-system": "*",
+    "@rollup/plugin-typescript": "^11.0.0",
     "react": "^18.2.0",
     "react-aria": "^3.22.0",
     "react-dom": "^18.2.0",
     "react-stately": "^3.20.0",
-    "storybook-addon-react-docgen": "^1.2.43",
-    "tsup": "^6.6.3"
+    "storybook-addon-react-docgen": "^1.2.43"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
