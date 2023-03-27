@@ -28,7 +28,7 @@ export interface CheckboxProps
   >;
 }
 
-function Checkbox(props: CheckboxProps) {
+export function Checkbox(props: CheckboxProps) {
   const { children, inputProps = {} } = props;
 
   const state = useToggleState({
@@ -64,5 +64,3 @@ function Checkbox(props: CheckboxProps) {
     </label>
   );
 }
-
-export default Checkbox;

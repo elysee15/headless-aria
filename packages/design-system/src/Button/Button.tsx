@@ -1,30 +1,30 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { AriaButtonProps, mergeProps, useButton } from "react-aria";
 
-type BaseProps = Omit<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >,
-  "onClick" | "onChange"
->;
+type Size = "small" | "medium" | "large" | string;
 
-type OmitedProps = "isDisabled";
-
-export type ButtonProps = BaseProps &
-  Omit<AriaButtonProps<"button">, OmitedProps>;
+export type ButtonProps = AriaButtonProps & {
+  children: React.ReactNode;
+  startIcon: React.ReactNode;
+  leftIcon: React.ReactNode;
+  fullWidth: boolean;
+  size: Size;
+  color: string;
+  href: string;
+};
 
 // TODO: add a correct type for `ref`
-const Button = forwardRef((props: ButtonProps, ref: any) => {
-  const fallbackRef = React.useRef(null);
-  const domRef = ref || fallbackRef;
-  const { buttonProps } = useButton(props, domRef);
+export const Button = React.forwardRef<HTMLButtonElement, Partial<ButtonProps>>(
+  (props, ref) => {
+    const fallbackRef = React.useRef<HTMLButtonElement>(null);
+    const domRef = (ref || fallbackRef) as React.RefObject<HTMLButtonElement>;
 
-  return (
-    <button {...mergeProps(buttonProps, props)} ref={domRef}>
-      {props.children}
-    </button>
-  );
-});
+    const { buttonProps } = useButton(props, domRef);
 
-export default Button;
+    return (
+      <button {...mergeProps(buttonProps, props)} ref={domRef}>
+        {props.children}
+      </button>
+    );
+  }
+);

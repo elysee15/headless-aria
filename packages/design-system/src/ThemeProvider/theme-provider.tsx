@@ -17,7 +17,7 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
       <Global
         styles={(theme) => ({
           body: {
-            background: theme.palette.primary.main,
+            // apply here global style or css reset
           },
         })}
       />
