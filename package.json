@@ -3,7 +3,7 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/docs"
+    "docs"
   ],
   "scripts": {
     "docs": "lerna run storybook --scope=docs",
@@ -22,6 +22,7 @@
     "lerna": "^6.5.1",
     "vite": "^4.1.2",
     "vitest": "^0.28.5",
-    "vitest-tsconfig-paths": "^3.4.1"
+    "vitest-tsconfig-paths": "^3.4.1",
+    "design-system": "*"
   }
 }

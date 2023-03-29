@@ -18,6 +18,7 @@ export const ThemeProvider = ({ children, theme }: ThemeProviderProps) => {
         styles={(theme) => ({
           body: {
             // apply here global style or css reset
+            background: theme.palette.common.white,
           },
         })}
       />
