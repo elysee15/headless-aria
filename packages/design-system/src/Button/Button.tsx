@@ -1,29 +1,15 @@
 import React from "react";
-import { AriaButtonProps, mergeProps, useButton } from "react-aria";
+import { ButtonWrapper } from "./Button.style";
+import { ButtonProps } from "./Button.type";
 
-type Size = "small" | "medium" | "large" | string;
-
-export type ButtonProps = AriaButtonProps & {
-  children: React.ReactNode;
-  startIcon: React.ReactNode;
-  leftIcon: React.ReactNode;
-  fullWidth: boolean;
-  size: Size;
-  color: string;
-  href: string;
-};
-
-export const Button = React.forwardRef<HTMLButtonElement, Partial<ButtonProps>>(
-  (props, ref) => {
-    const fallbackRef = React.useRef<HTMLButtonElement>(null);
-    const domRef = (ref || fallbackRef) as React.RefObject<HTMLButtonElement>;
-
-    const { buttonProps } = useButton(props, domRef);
-
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, leftIcon, rightIcon, ...props }, ref) => {
     return (
-      <button {...mergeProps(buttonProps, props)} ref={domRef}>
-        {props.children}
-      </button>
+      <ButtonWrapper {...props} ref={ref}>
+        {leftIcon && <span style={{ marginRight: 5 }}>{leftIcon}</span>}
+        {children}
+        {rightIcon && <span style={{ marginLeft: 5 }}>{rightIcon}</span>}
+      </ButtonWrapper>
     );
   }
 );
