@@ -13,7 +13,6 @@ export type ButtonProps = AriaButtonProps & {
   href: string;
 };
 
-// TODO: add a correct type for `ref`
 export const Button = React.forwardRef<HTMLButtonElement, Partial<ButtonProps>>(
   (props, ref) => {
     const fallbackRef = React.useRef<HTMLButtonElement>(null);
@@ -28,3 +27,5 @@ export const Button = React.forwardRef<HTMLButtonElement, Partial<ButtonProps>>(
     );
   }
 );
+
+Button.displayName = "Button";
