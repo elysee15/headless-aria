@@ -1,23 +1,38 @@
-import { Button, ButtonProps } from "design-system";
+import { Button, ThemeProvider, ButtonProps } from "design-system";
 import { Meta, Story } from "@storybook/react";
 
-// import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "components/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: "color" },
+    color: {
+      options: ["primary", "secondary", "error", "warning"],
+      control: { type: "radio" },
+    },
+    size: {
+      options: ["small", "medium", "large"],
+      control: { type: "radio" },
+    },
   },
 } as Meta<ButtonProps>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: Story<ButtonProps> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => (
+  <ThemeProvider theme={{}}>
+    <Button
+      {...args}
+      style={{
+        background: "red !important",
+      }}
+    />
+  </ThemeProvider>
+);
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  children: "Button",
+  children: "Click Me",
+  color: "primary",
+  leftIcon: "<",
+  rightIcon: ">",
+  disabled: false,
+  size: "medium",
 };
